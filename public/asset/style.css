@@ -1,0 +1,1352 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+
+:root{
+    /* Color */
+    --body-color: #F5F5F5;
+    --white-color: #FFFFFF;
+    --primary-color: #0C356A;
+    --primary-color-orange: #FE914A;
+    --primary-color-light: rgba(12, 53, 106, 0.09);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --text-color: #272829;
+    --green-color: #54B435;
+
+    /* transition */
+    --tran-01: all 0.1s ease;
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-04);
+    
+}
+
+
+/* Navbar
+================================================= */
+.navbar.scrolled a{
+    color: var(--text-color);
+}
+.navbar.scrolled button{
+    color: var(--text-color);
+}
+.navbar.scrolled {
+    background: var(--body-color);
+    transition: var(--tran-04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.navbar.scrolled .line{
+    background-color: var(--text-color);
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+    background-color: var(--body-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    z-index: 1000; /* Menetapkan indeks-z untuk memastikan navbar tetap di atas konten */
+    transition: background-color 0.3s ease; /* Transisi warna latar belakang ketika di-scroll */
+}
+.nav-tiket{
+    background-color: var(--body-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.nav-tiket .logo-text a,
+.nav-tiket .nav-links a,
+.nav-tiket .profile a,
+.nav-tiket .profile button{
+    color: var(--primary-color);
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo-profession {
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.logo img {
+    margin-left: 15px;
+    max-height: 30px;
+}
+.con-nav-prof{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav-links{
+    margin: 0;
+    gap: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--tran-03);
+    padding: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 20px;
+    
+}
+.nav-links a:hover{
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color-light);
+    margin: 3px 0;
+}
+.drop-prof{
+    display: none;
+}
+.profile{
+    margin-right: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+}
+.profile a{
+    font-weight: 700;
+    color: var(--primary-color-light);
+}
+.profile img{
+    padding: 10px;
+    width: 9%;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+/* ... CSS Anda yang sudah ada ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .profile button{
+    color: var(--primary-color-light);
+    margin-left: 10px;
+  }
+  .dropbtn {
+    background: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+@media screen and (max-width: 768px) {
+    
+    .navbar{
+        background-color: var(--body-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .navbar .line{
+        background-color: var(--text-color);
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #dddfdd;
+        
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .nav-links a{
+        color: var(--text-color);
+    }
+    .logo-text a {
+        color: var(--text-color);
+    }
+    .nav-links.active {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .burger {
+        display: flex;
+    }
+    .profile{
+        display: none;
+    }
+    .drop-prof{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(199, 204, 199);
+    }
+}
+/* Navbar end
+================================================= */
+
+
+/* content
+================================================= */
+.thumnail{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 150px;
+}
+.thumnail-text{
+    text-align: end;
+    width: 40%;
+    margin: 20px;
+}
+.thumnail-text .title{
+    font-size: 40px;
+    font-weight: 700;
+}
+.blue-text{
+    color: var(--primary-color);
+}
+.orange-text{
+    color: var(--primary-color-orange);
+}
+.thumnail-text p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.thumnail-text a{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+.bg-gambar{
+    position: absolute;
+    background-color: var(--primary-color-light);
+    width: 45%;
+    height: 20%;
+    border-radius: 100px 0px 0px 100px;
+    top: 300px;
+    z-index: -999;
+}
+.bg-gambar p{
+    opacity: 0;
+}
+.thumnail-gambar{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 50%;
+}
+.thumnail-gambar img{
+    width: 90%;
+}
+
+.add-thumnail{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.add-gambar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 60%;
+    background-color: rgba(254, 145, 74, 0.06);
+}
+.add-gambar img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    width: 100%;
+}
+.add-text{
+    text-align: start;
+    width: 50%;
+}
+.add-thumnail .title{
+    font-size: 54px;
+    width: 20%;
+}
+.add-thumnail p{
+    width: 100%;
+}
+.add-thumnail a{
+    background-color: var(--primary-color-orange);
+}
+.add-thumnail .desc-promo{
+    position: absolute;
+    text-align: start;
+    left: 55px;
+    color: var(--white-color);
+    display: flex;
+    align-items: start;
+}
+.thumnail-container ul{
+    height: 10px;
+}
+ul li{
+    list-style-type: none;
+}
+.thumnail-container h4{
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.thumnail-container li{
+    font-weight: 500;
+    font-size: 15px;
+}
+.add-thumnail .add-promo{
+    position: absolute;
+    text-align: start;
+    color: var(--white-color);
+    display: flex;
+    align-items: start;
+    left: 410px;
+}
+@media screen and (max-width: 768px) {
+    .thumnail {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-top: 150px;
+    }
+    .thumnail-text{
+        text-align: center;
+        width: 100%;
+    }
+    .thumnail-gambar{
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        width: 100%;
+    }
+    .bg-gambar{
+        top: 200px;
+        width: 100%;
+        height: 15%;
+    }
+    .add-thumnail{
+        flex-direction: column;
+    }
+    .add-gambar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+    }
+    .add-gambar img{
+        width: 50%;
+        margin: 0;
+    }
+    .add-thumnail .title{
+        font-size: 44px;
+        width: 20%;
+    }
+    .add-thumnail .desc-promo{
+        text-align: end;
+    }
+    .thumnail-container h4{
+        font-size: 15px;
+        margin-top: 2px;
+    }
+    .thumnail-container li{
+        font-size: 13px;
+    }
+    .thumnail-container ul{
+        height: 60px;
+    }
+    .add-thumnail .add-promo{
+        text-align: end;
+        left: 240px;
+    }
+}
+@media screen and (max-width: 393px){
+    .add-thumnail .add-promo{
+        left: 223px;
+    }
+}
+@media screen and (max-width: 375px){
+    .add-thumnail .add-promo{
+        left: 210px;
+    }
+}
+@media screen and (max-width: 360px){
+    .add-thumnail .add-promo{
+        left: 198px;
+    }
+    .thumnail-container h4{
+        font-size: 14px;
+        margin-top: 2px;
+    }
+    .thumnail-containerli{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 320px){
+    .thumnail-container h4{
+        font-size: 10px;
+        margin-top: 2px;
+    }
+    .thumnail-container li{
+        font-size: 9px;
+    }
+}
+/* content end
+================================================= */
+
+/* Catalog
+================================================= */
+.container-card {
+    background-color: var(--white-color);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.container-card .top-product{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: start;
+    margin: 20px;
+}
+.container-card .goto{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-right: 50px;
+}
+.goto a{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: var(--text-color);
+    background-color: #F5F5F5;
+    padding: 0px 20px 0px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.goto .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #0C356A, #FE914A);
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100px;
+    font-size: 25px;
+    color: var(--white-color);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom pertama */
+    grid-gap: 20px;
+    margin: 0 auto;
+}
+.product-card{
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    border-radius: 10px;
+}
+.product-card img{
+    height: 100%;
+    max-width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.gambar-container{
+    max-height: 70%;
+    display: flex;
+    justify-content: center;
+}
+.card-text{
+    padding: 10px;
+}
+.card-text .price{
+    font-size: 20px;
+    color: var(--green-color);
+}
+.card-text .per{
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+.card-text li{
+    color: var(--text-color);
+}
+.card-text p{
+    text-align: end;
+    margin-top: 10px;
+}
+.card-text a,
+.card-text h3,
+.card-text p{
+    color: var(--text-color);
+}
+.card-text p{
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .container-card .goto{
+        margin-right: 20px;
+    }
+    .goto .icon{
+        padding: 5px;
+    }
+}
+/* Catalog end
+================================================= */
+
+/* About
+================================================= */
+.about-container{
+    display: flex;
+    justify-content: center;
+    margin: 90px;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+.about{
+    border-radius: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+.text-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about .about-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 27px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.text-about .desc-about{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    width: 100%;
+}
+.text-about p{
+    text-align: center;
+}
+.about .about-title img{
+    width: 3%;
+    margin: 15px;
+}
+.about .gambar-about{
+    display: flex;
+    justify-content: center;
+    
+}
+.about .gambar-about img{
+    width: 100%;
+    margin: 17px;
+    margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+    .about-container{
+        margin: 10px;
+    }
+    .about{
+        width: 100%;
+    }
+    .about .about-title{
+        align-items: start;
+    }
+    .about .about-title img{
+        width: 10%;
+    }
+    .about .gambar-about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .gambar-about img{
+        width: 80%;
+        margin: 10px;
+    }
+}
+/* About end
+================================================= */
+
+/* footer
+================================================= */
+
+.footer {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 10%;
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-weight: bold;
+}
+
+.footer-credit {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 17px
+}
+.footer-credit a{
+    margin: 15px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--tran-03);
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+.footer-credit #fb:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.footer-credit #ig:hover{
+    background-color: #F11A7B;
+    color: var(--white-color);
+}
+.footer-credit #wa:hover{
+    background-color: var(--green-color);
+    color: var(--white-color);
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.logo-text {
+    text-align: center;
+    display: flex;
+    align-items: end;
+    color: var(--primary-color-light);
+}
+
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        flex-direction: column;
+    }
+
+    .footer-logo img {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 30%;
+    }
+    .footer-credit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+    }
+}
+
+/* footer end
+================================================= */
+
+
+/*=============================================== 
+============== CSS LOGIN ========================
+================================================= */
+.card-login{
+    display: flex;
+    justify-content: center;
+
+}
+.login-card {
+    background-color: var(--primary-color-light);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 120px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-card .logo{
+    display: flex;
+    justify-content: center;
+}
+.login-card h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background: var(--primary-color-light);
+}
+input::placeholder{
+    color: var(--text-color-light);
+}
+input:focus{
+    outline: none;
+    border-color: var(--btngreen);
+    box-shadow: 0 0 5px var(--btngreen);
+}
+.text-regis{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+button[type="submit"]{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+/* Gaya dasar untuk input select */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Menghilangkan arrow default pada input select di beberapa browser */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  /* Gaya ketika input select aktif (focus) */
+  select:focus {
+    outline: none;
+  }
+  
+  /* Gaya ketika input select memiliki opsi yang dipilih */
+  select option:checked {
+    background-color: var(--text-color);
+    color: var(--white-color);
+  }
+  textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    resize: none;
+}
+textarea::placeholder{
+    padding: 7px;
+}
+
+
+/*=============================================== 
+============== CSS LOGIN END =====================
+================================================= */
+
+
+/*=============================================== 
+============== CSS HOME ADMIN =====================
+================================================= */
+.top-product-catalog{
+    display: flex;
+    align-items: center;
+}
+.top-product-catalog h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.admin-container-card{
+    margin-top: 100px;
+}
+.action-catalog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.goto-catalog-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.goto-catalog a{
+    padding: 10px;
+    margin: 4px;
+    background: linear-gradient(to bottom, #006FFF, #33FF00);
+    color: var(--white-color);
+}
+.action-catalog i{
+    display: flex;
+    align-items: center;
+}
+.action-catalog .edit{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    font-size: 30px;
+}
+.action-catalog .edit i{
+    color: #FD8D14;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    padding: 10px;
+    border-radius: 100px;
+}
+.action-catalog .hapus{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    font-size: 30px;
+}
+.action-catalog .hapus i{
+    color: #FE0000;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    padding: 10px;
+    border-radius: 100px;
+}
+@media screen and (max-width: 768px) {
+    .top-product-catalog{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*=============================================== 
+============== CSS HOME ADMIN END ================
+================================================= */
+
+
+/*=============================================== 
+============== CSS TAMBAH ADMIN  ================
+================================================= */
+.card-form-container{
+    display: flex;
+    justify-content: center;
+}
+.form-card{
+    background-color: var(--primary-color-light);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+.form-card .logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.form-card h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.picture-container{
+    display: flex;
+    justify-content: center;
+  }
+.picture {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    border: 2px dashed var(--text-color);
+    background: none;
+    overflow: hidden;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.picture.has-dashed {
+    border: none;
+    border-radius: 0px;
+}
+.picture label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.picture.has-image img {
+    display: block;
+}
+.picture input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1; /* Untuk mengaktifkan klik pada label */
+}
+.file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: var(--primary-color-light);
+    transition: background-color 0.3s ease;
+}
+  
+.file-label:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+  
+.plus-icon {
+    font-size: 40px;
+    color: var(--text-color);
+}
+button a{
+    color: var(--white-color);
+}
+/*=============================================== 
+============== CSS TAMBAH ADMIN END ================
+================================================= */
+
+
+
+/*=============================================== 
+============== CSS DETAIL =======================
+================================================= */
+.detail-container{
+    margin-top: 100px;
+}
+.detail-gambar{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+.detail img{
+    max-width: 100%;
+}
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 20px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.detail-text{
+    height: 200%;
+    width: 70%;
+    margin-top: 40px;
+}
+.detail-text .harga{
+    font-size: 30px;
+    color: var(--green-color);
+}
+.detail-text .stok{
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 17px;
+}
+.detail-title{
+    margin-bottom: 20px;
+}
+.detail-deskripsi{
+    margin-bottom: 20px;
+}
+.tombol-quantity{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.tombol-quantity .stok{
+    margin-right: 20px;
+}
+.tombol-quantity div{
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--white-color);
+}
+.tombol-quantity button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 5%;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    background-color: var(--white-color);
+}
+.action-detail{
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+}
+.action-detail button{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    margin: 10px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.action-detail i{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.action-detail .cart{
+    color: var(--primary-color);
+    background-color: var(--primary-color-light);
+    border: 3px solid var(--primary-color);
+}
+/* slider
+================================ */
+h4{
+    margin-bottom: 20px;
+}
+h4 span{
+    background-color: var(--white-color);
+    padding: 15px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    border-radius: 0px 20px 20px 0px;
+    font-size: 30px;
+
+}
+.container-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.slider {
+    width: 900px; /* 3 gambar * lebar gambar */
+    overflow: hidden;
+}
+  
+.slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    align-items: center;
+  }
+  
+.slide {
+    flex: 0 0 33.33%; /* Mengatur lebar slide sesuai dengan jumlah slide yang ditampilkan */
+    /* Gaya lainnya yang diperlukan */
+}
+.slide span{
+    font-weight: 700;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    background-color: var(--white-color);
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+    margin: 2px;
+    margin-top: 0px;
+} 
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+  /* Button styles */
+.slider-btn {
+    cursor: pointer;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+  
+.prev-btn {
+    float: left;
+}
+  
+.next-btn {
+    float: right;
+}
+.container-slider button{
+    margin: 50px;
+}
+
+
+/* slider end
+================================ */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .popup p{
+    margin-bottom: 20px;
+  }
+  .popup span{
+    font-size: 30px;
+    color: var(--green-color);
+  }
+  .popup .tombol-quantity button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 10%;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    background-color: var(--white-color);
+}
+  
+  .popup-content {
+    background-color: var(--white-color);
+    width: 70%;
+    border-radius: 20px;
+    max-width: 400px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close {
+    display: flex;
+    justify-content: end;
+  }
+  .close p{
+    font-size: 18px;
+    cursor: pointer;
+    background: red;
+    padding: 5px 9px 5px 9px;
+    border-radius: 20px;
+    color: var(--white-color);
+    font-weight: bold;
+  }
+@media screen and (max-width: 768px) {
+    .detail{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .detail-gambar{
+        width: 100%;
+    }
+    .action-detail{
+        justify-content: center;
+    }
+    .action-detail a{
+        margin: 10px;
+        margin-bottom: 40px;
+    }
+    .tombol-quantity button{
+        width: 20%;
+    }
+    .action-detail a{
+        font-size: 12px;
+        padding: 10px;
+    }
+    .slider {
+        width: 300px; /* 3 gambar * lebar gambar */
+        overflow: hidden;
+      }
+      .slider-btn {
+        font-size: 15px;
+    }
+    .container-slider{
+        margin-top: -50px;
+        flex-direction: column;
+        gap: 0px;
+    }
+    h4 span{
+        margin-left: 0px;
+        font-size: 15px;
+    }
+}
+/*=============================================== 
+============== CSS DETAIL END ====================
+================================================= */
+
+/*=============================================== 
+============== CSS EDIT  ====================
+================================================= */
+.edit-detail{
+    display: flex;
+    justify-content: start;
+    padding: 0px;
+}
+.edit-detail form{
+    width: 50%;
+    justify-content: center;
+}
+.edit-detail form button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--white-color);
+    width: 50%;
+}
+.form-edit{
+    margin-top: 15px;
+}
+
+.form-edit textarea{
+    width: 100%;
+    margin-bottom: 0px;
+}
+.form-edit input{
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-detail form{
+        width: 90%;
+    }
+    .edit-detail form button{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+/*=============================================== 
+============== CSS EDIT  END ====================
+================================================= */
