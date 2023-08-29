@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Tipe;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -12,9 +13,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return view('produk.index', [
-            'produk' => Produk::all()
-        ]);
+        $produk = Produk::all();
+        $tipe = Tipe::all();
+        return view('produk.index', compact('produk', 'tipe'));
     }
 
     /**
@@ -22,7 +23,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('produk.create');
+        $tipe = Tipe::all(); // Mengambil semua data tipe produk
+        return view('produk.create', compact('tipe'));
     }
 
     /**
@@ -33,6 +35,7 @@ class ProdukController extends Controller
         $data_produk = $request->validate([
             'image'=>'image|file',
             'nama_barang' => ['required'],
+            'tipe_id'=> ['required'],
             'harga' => ['required'],
             'deskripsi' => ['required'],
             'stok' => ['required'],

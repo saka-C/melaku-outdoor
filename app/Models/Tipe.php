@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pembeli extends Model
+class Tipe extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'tipe'
+    ];
 }

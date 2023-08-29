@@ -37,6 +37,15 @@
                 <input placeholder="nama produk" name="nama_barang" required>
             </div>
             <div class="form-group">
+                <label>Kategori Produk</label>
+                <select name="tipe_id" id="">
+                <option disabled selected value >Pilih Kategori</option>
+                @foreach ($tipe as $t)
+                <option value="{{$t->id}}">{{$t->tipe}}</option>
+                @endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Harga</label>
                 <input type="number"  placeholder="Harga produk" name="harga" required>
             </div>

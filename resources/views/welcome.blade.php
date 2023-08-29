@@ -15,7 +15,7 @@
 ===========================================================================  -->
         <nav class="navbar">
             <div class="logo">
-                <img src="./asset/melaku-logo.png" alt="">
+                <img src="/asset/melaku-logo.png" alt="">
                 
             </div>
             <div class="con-nav-prof">
@@ -49,12 +49,12 @@
         </div>
         <div class="bg-gambar"><p>.</p></div>
         <div class="thumnail-gambar">
-            <img src="./asset/thumnail.png" alt="">
+            <img src="/asset/thumnail.png" alt="">
         </div>
     </div>
     <div class="thumnail add-thumnail">
         <div class="thumnail-gambar add-gambar">
-            <img src="./asset/card-paket.png" alt="">
+            <img src="/asset/card-paket.png" alt="">
             <span class="desc-promo">
                 <ul>
                     <li>1x Tenda 4x5</li>
@@ -63,7 +63,7 @@
                     <h4>PAKET Trip Camp</h4>
                 </ul>
             </span>
-            <img src="./asset/card-paket-2.png" alt="">
+            <img src="/asset/card-paket-2.png" alt="">
             <span class="add-promo">
                 <ul>
                     <li>1x Tenda 4x5</li>
@@ -89,7 +89,7 @@
     <div class="top-product">
         <h1>Catalog</h1>
         <div class="goto">
-            <a href="{{ route('catalog') }}">Lihat Semua <i class='bx bx-right-arrow-alt icon'></i></a>
+            <a href="#">Lihat Semua <i class='bx bx-right-arrow-alt icon'></i></a>
         </div>
     </div>
     <div class="product-grid">
@@ -99,123 +99,6 @@
             <div class="card-text">
                 <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
                 <h3>AREI Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/tas2.jpg" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/tas3.jpg" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/tas4.jpg" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/tas5.jpg" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/eror.png" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/eror.png" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/eror.png" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/eror.png" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
-                <ul>
-                    <li>1x Tas 9 liter</li>
-                </ul>
-                <p>Selengkapnya..</p>
-            </div>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="">
-            <div class="gambar-container"><img src="./asset/eror.png" alt="Product 1"></div>
-            <div class="card-text">
-                <span class="price">Rp.50.000,00 <span class="per">/hari</span></span>
-                <h3>EIGER Tas 9 liter</h3>
                 <ul>
                     <li>1x Tas 9 liter</li>
                 </ul>
@@ -275,6 +158,6 @@
 
     </div>
     
-    <script src="script.js"></script>
+    <script src="/asset/script.js"></script>
 </body>
 </html>

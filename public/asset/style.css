@@ -1350,3 +1350,96 @@ h4 span{
 /*=============================================== 
 ============== CSS EDIT  END ====================
 ================================================= */
+
+/*=============================================== 
+============== CSS TABLE   ====================
+================================================= */
+
+.css-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+.css-table h1{
+    margin-bottom: 20px;
+}
+.css-table h2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.css-table h2 a{
+    background-color: #006FFF;
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+  .table-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    width: 50%;
+    border-radius: 20px;
+  }
+  table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+  }
+
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+
+.action-table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.action-table .edit-table i,
+.action-table .hapus-table i{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    color: var(--primary-color-orange);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.action-table .hapus-table i{
+    color: red;
+}
+
+  /* Gaya tabel responsif */
+  @media (max-width: 768px) {
+    .table-container{
+        width: 90%;
+      }
+    table {
+        width: 90%;
+      overflow-x: auto;
+    }
+
+    th, td {
+      white-space: nowrap;
+    }
+    .css-table h2{
+        font-size: 15px;
+    
+    }
+  }
+/*=============================================== 
+============== CSS TABLE  END ====================
+================================================= */

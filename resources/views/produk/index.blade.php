@@ -21,9 +21,10 @@
             </div>
             <div class="con-nav-prof">
                 <div class="nav-links">
+                    <a href="/tipe/index">Kategori</a>
                     <a href="/produk/create">Tambah Produk</a>
                     <a href="#">Rekap Data</a>
-                    <a href="index.html">Logout</a>                  
+                    <a href="welcome">Logout</a>                  
                 </div>
                 <div class="burger">
                     <div class="line"></div>
@@ -42,18 +43,11 @@
     <div class="top-product top-product-catalog">
         <h1>Catalog</h1>
         <div class="goto goto-catalog-container">
+            @foreach($tipe as $t)
             <div class="goto-catalog">
-                <a href="">Tas</a>
+                <a href="">{{$t->tipe}}</a>
             </div>
-            <div class="goto-catalog">
-                <a href="">Sleepingbag</a>
-            </div>
-            <div class="goto-catalog">
-                <a href="">Sepatu</a>
-            </div>
-            <div class="goto-catalog">
-                <a href="">Tenda</a>
-            </div>
+            @endforeach
         </div>
     </div>
 
