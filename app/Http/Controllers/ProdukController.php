@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use App\Models\Tipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
 {
@@ -62,8 +63,11 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        return view('produk.edit',[
-            'produk' => $produk
+        $tipe = Tipe::all(); // Misalnya, Anda mengambil data dari model Tipe
+    
+        return view('produk.edit', [
+            'produk' => $produk,
+            'tipe' => $tipe,
         ]);
     }
 
@@ -78,6 +82,20 @@ class ProdukController extends Controller
             'deskripsi' => ['required'],
             'stok' => ['required'],
         ]);
+
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama (jika ada)
+            if ($produk->image) {
+                Storage::delete('public/' . $produk->image);
+            }
+    
+            // Simpan gambar baru
+            $imagePath = $request->file('image')->store('public/images');
+            $data_produk['image'] = $imagePath;
+        }
+    
+
+
         $produk->update($data_produk);
         return redirect('/produk/index')->with('success', 'Update Produk Berhasil');
     }
@@ -91,4 +109,6 @@ class ProdukController extends Controller
 
         return back()->with('succsess', "Produk di Hapus");
     }
+
+
 }

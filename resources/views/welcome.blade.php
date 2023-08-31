@@ -89,7 +89,7 @@
     <div class="top-product">
         <h1>Catalog</h1>
         <div class="goto">
-            <a href="#">Lihat Semua <i class='bx bx-right-arrow-alt icon'></i></a>
+            <a href="/catalog/index">Lihat Semua <i class='bx bx-right-arrow-alt icon'></i></a>
         </div>
     </div>
     <div class="product-grid">

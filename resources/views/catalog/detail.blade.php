@@ -47,14 +47,14 @@
         </div>
         <div class="detail-text">
             <div class="detail-title">
-                <h1>TAS AREI 9 LITER</h1>
-                <span class="harga">Rp.50.000,00</span>
+                <h1>{{$p->nama_barang}}</h1>
+                <span class="harga">Rp.{{$p->harga}}</span>
                 <span class="quantity">1x/hari</span>
             </div>
             <div class="detail-deskripsi">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio quo necessitatibus laudantium laborum modi consectetur consequatur vel nulla, voluptas deleniti!</p>
+                <p>{{$p->deskripsi}}</p>
             </div>
-            <div class="stok">Stok : 30</div>
+            <div class="stok">Stok : {{$p->stok}}</div>
             <div class="action-detail">
                 <button class="cart" id="openPopupBtn"><i class='bx bxs-cart-alt' ></i>Add to Cart</button>
                 <button ><i class='bx bxs-shopping-bag-alt' ></i>Sewa Sekarang</button>

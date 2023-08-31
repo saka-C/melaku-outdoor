@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TipeController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\DetailController;
+
+
+use App\Models\Tipe;
 
 
 /*
@@ -21,15 +26,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('catalog')->group(function(){
+    Route::get('/index',[CatalogController::class, 'index']);
+});
+
+
+
+
 
 Route::prefix('produk')->group(function(){
     Route::get('/index',[ProdukController::class, 'index']);
     Route::get('/create',[ProdukController::class, 'create']);
     Route::post('/store',[ProdukController::class, 'store']);
     Route::get('/edit/{produk}',[ProdukController::class, 'edit']);
-    Route::post('/update/{produk}',[ProdukController::class, 'update']);
+    Route::patch('/update/{produk}',[ProdukController::class, 'update']);
     Route::get('/destroy/{produk}',[ProdukController::class, 'destroy']);
+
 });
+
+
+
 
 Route::prefix('tipe')->group(function(){
     Route::get('/index',[TipeController::class, 'index']);

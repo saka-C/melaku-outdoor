@@ -76,4 +76,6 @@ class TipeController extends Controller
         $tipe->delete();
         return back()->with('success', 'data dihapus');
     }
+
+
 }

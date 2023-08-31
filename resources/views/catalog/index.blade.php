@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/asset/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="./asset/melaku-logo-kecil1.png" type="image/x-icon">
-    <title>Admin Melaku Outdoor</title>
+    <title>Catalog Melaku Outdoor</title>
 </head>
 <body>
     <div class="container">
@@ -43,37 +43,30 @@
     <div class="top-product top-product-catalog">
         <h1>Catalog</h1>
         <div class="goto goto-catalog-container">
+            @foreach($tipe as $t)
             <div class="goto-catalog">
-                <a href="">Tas</a>
+                <a href="">{{$t->tipe}}</a>
             </div>
-            <div class="goto-catalog">
-                <a href="">Sleepingbag</a>
-            </div>
-            <div class="goto-catalog">
-                <a href="">Sepatu</a>
-            </div>
-            <div class="goto-catalog">
-                <a href="">Tenda</a>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="product-grid">
-
+    @foreach($produk as $p)
       <div class="product-card">
-        <a href="detail-produk.html">
-            <div class="gambar-container"><img src="" alt="Product 1"></div>
+        <a href="/catalog/detail">
+            <div class="gambar-container"><img src="{{ asset('storage/' . $p->image)}}" alt="Product 1"></div>
             <div class="card-text">
-                <span class="price">Rp. <span class="per">/hari</span></span>
-                <h3></h3>
+                <span class="price">Rp.{{$p->harga}}<span class="per">/hari</span></span>
+                <h3>{{$p->nama_barang}}</h3>
                 <ul>
-                    <li></li>
+                    <li>{{$p->stok}} {{$p->nama_barang}}</li>
                 </ul>
                 <p>Selengkapnya..</p>
             </div>
             <!-- -------- tambah kartu lain --------- -->
         </a>
       </div>
-
+      @endforeach
   </div>
 
 <!-- ============================ Catalog end =================================

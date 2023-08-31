@@ -36,22 +36,33 @@
 <!-- ================================ Navbar end ================================
 ===========================================================================  -->
 
-<!-- ============================ Detail =================================
+<!-- ============================ Form UPDATE =================================
 ===========================================================================  -->
 <div class="detail-container">
     <div class="detail edit-detail">
         <div class="detail-gambar">
-        <img src="#" alt="Gambar Produk">
+            <img id="imagePreview" src="{{ asset('storage/' . $produk->image)}}" alt="Gambar Produk">
         </div>
-        <form action="/produk/update/{{$produk->id}}" method="post">
+        <form action="/produk/update/{{$produk->id}}" method="POST"  enctype="multipart/form-data">
             @csrf
+            @method('PATCH')
+            
             <div class="form-group form-edit">
                 <label>Foto Produk</label>
-                <input type="file" name="image" id="image">
+                <input type="file" id="fileInput" accept="image/*" name="image">
             </div>
             <div class="form-group form-edit">
                 <label>Nama Produk</label>
                 <input name="nama_barang" value="{{$produk->nama_barang}}">
+            </div>
+            <div class="form-group">
+                <label>Kategori Produk</label>
+                <select name="tipe_id" id="">
+                <option disabled selected value >Pilih Kategori</option>
+                @foreach ($tipe as $t)
+                <option value="{{$t->id}}">{{$t->tipe}}</option>
+                @endforeach
+                </select>
             </div>
             <div class="form-group form-edit">
                 <label>Harga Produk</label>
@@ -59,18 +70,18 @@
             </div>
             <div class="form-group form-edit">
                 <label>Deskripsi Produk</label>
-                <textarea name="deskripsi" id="" value="{{$produk->deskripsi}}"></textarea>
+                <textarea name="deskripsi" id="" >{{$produk->deskripsi}}</textarea>
             </div>
             <div class="form-group form-edit">
                 <label>Stok Produk</label>
                 <input name="stok" value="{{$produk->stok}}">
             </div>
-            <button>Update</button>
+            <button type="submit" name="submit">Update</button>
         </form>
     </div>
 </div>
 
-<!-- ============================ Detail end =================================
+<!-- ============================ Form UPDATE end =================================
 ===========================================================================  -->
 
 
@@ -98,6 +109,25 @@
     </div>
     
     <script src="script.js"></script>
+    <script>
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        var fileInput = event.target;
+        var imagePreview = document.getElementById('imagePreview');
+        var file = fileInput.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.src = "{{ asset('storage/' . $produk->image)}}";
+        }
+    });
+</script>
 
 </body>
 </html>

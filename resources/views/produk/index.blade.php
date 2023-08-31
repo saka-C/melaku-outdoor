@@ -45,7 +45,7 @@
         <div class="goto goto-catalog-container">
             @foreach($tipe as $t)
             <div class="goto-catalog">
-                <a href="">{{$t->tipe}}</a>
+            <a href="#">{{ $t->tipe }}</a>
             </div>
             @endforeach
         </div>
@@ -55,7 +55,7 @@
     <div class="product-grid">
     @foreach($produk as $p)
       <div class="product-card">
-        <a href="">
+        <a href="{{ route('catalog.detail', ['id' => $p->id]) }}">
             <div class="gambar-container"><img src="{{ asset('storage/' . $p->image)}}" alt="Product 1"></div>
             <div class="card-text">
                 <span class="price">Rp.{{$p->harga}}<span class="per">/hari</span></span>
