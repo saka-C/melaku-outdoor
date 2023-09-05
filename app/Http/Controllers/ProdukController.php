@@ -33,7 +33,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $data_produk = $request->validate([
+        $request->validate([
             'image'=>'image|file',
             'nama_barang' => ['required'],
             'tipe_id'=> ['required'],
@@ -42,10 +42,18 @@ class ProdukController extends Controller
             'stok' => ['required'],
         ]);
 
-        $data_produk['image'] = $request->file('image')->store('post-images');
+        $imagePath = $request->file('image')->store('produk-image', 'public');
+        // $data_produk['image'] = $request->file('image')->store('post-images');
 
 
-        Produk::create($data_produk);
+        Produk::create([
+            'image' => $imagePath,
+            'nama_barang' => $request->nama_barang,
+            'tipe_id' => $request->tipe_id,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi,
+            'stok' => $request->stok,
+        ]);
         return redirect('/produk/index')->with('success', 'Produk di Tambahkan');
 
     }
@@ -53,18 +61,26 @@ class ProdukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function detail($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        return view('produk.detail', compact('produk'));
     }
 
+
+    public function produkCategory($tipeId){
+        $produk = Produk::all()->where('tipe_id',$tipeId);
+
+        return view('produk.categoryProduk',compact('produk'));
+
+    }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Produk $produk)
     {
         $tipe = Tipe::all(); // Misalnya, Anda mengambil data dari model Tipe
-    
+
         return view('produk.edit', [
             'produk' => $produk,
             'tipe' => $tipe,
@@ -88,12 +104,12 @@ class ProdukController extends Controller
             if ($produk->image) {
                 Storage::delete('public/' . $produk->image);
             }
-    
+
             // Simpan gambar baru
             $imagePath = $request->file('image')->store('public/images');
             $data_produk['image'] = $imagePath;
         }
-    
+
 
 
         $produk->update($data_produk);

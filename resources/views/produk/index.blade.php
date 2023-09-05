@@ -17,14 +17,14 @@
         <nav class="navbar">
             <div class="logo">
                 <img src="./asset/melaku-logo.png" alt="">
-                
+
             </div>
             <div class="con-nav-prof">
                 <div class="nav-links">
                     <a href="/tipe/index">Kategori</a>
                     <a href="/produk/create">Tambah Produk</a>
                     <a href="#">Rekap Data</a>
-                    <a href="welcome">Logout</a>                  
+                    <a href="welcome">Logout</a>
                 </div>
                 <div class="burger">
                     <div class="line"></div>
@@ -32,7 +32,7 @@
                     <div class="line"></div>
                 </div>
             </div>
-            
+
         </nav>
 <!-- ================================ Navbar end ================================
 ===========================================================================  -->
@@ -45,17 +45,17 @@
         <div class="goto goto-catalog-container">
             @foreach($tipe as $t)
             <div class="goto-catalog">
-            <a href="#">{{ $t->tipe }}</a>
+            <a href="{{ route('produk.category', ['tipeId' => $t->id]) }}">{{ $t->tipe }}</a>
             </div>
             @endforeach
         </div>
     </div>
 
-    
+
     <div class="product-grid">
     @foreach($produk as $p)
       <div class="product-card">
-        <a href="{{ route('catalog.detail', ['id' => $p->id]) }}">
+        <a href="{{ route('produk.detail', ['id' => $p->id]) }}">
             <div class="gambar-container"><img src="{{ asset('storage/' . $p->image)}}" alt="Product 1"></div>
             <div class="card-text">
                 <span class="price">Rp.{{$p->harga}}<span class="per">/hari</span></span>
@@ -84,7 +84,7 @@
 
 
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
